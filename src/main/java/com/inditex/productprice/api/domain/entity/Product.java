@@ -1,15 +1,19 @@
 package com.inditex.productprice.api.domain.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
+@Entity
+@Getter
+@Setter
+@Table(name = "product")
 public class Product {
-    private Long id;
+
+    @Id
+    private Integer id;
+
     private String name;
 }
