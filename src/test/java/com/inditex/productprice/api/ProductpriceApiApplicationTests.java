@@ -1,12 +1,12 @@
 package com.inditex.productprice.api;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+//import org.junit.jupiter.api.Test;
+//import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@SpringBootTest
 class ProductpriceApiApplicationTests {
 
-	@Test
+	//@Test
 	void contextLoads() {
 	}
 

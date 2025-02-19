@@ -6,7 +6,7 @@ import com.inditex.productprice.api.infrastructure.repository.JpaPriceRepository
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
+import java.util.List;
 
 @Component
 public class PriceRepositoryAdapter implements PriceRepository {
@@ -17,9 +17,8 @@ public class PriceRepositoryAdapter implements PriceRepository {
         this.jpaPriceRepository = jpaPriceRepository;
     }
 
-
     @Override
-    public Optional<Price> findPriceByProductAndBrandAndDate(Integer productId, Integer brandId, LocalDateTime date) {
-        return jpaPriceRepository.findFirstByProductIdAndBrandIdAndStartDateByPriorityDesc(productId, brandId, date);
+    public List<Price> findByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(Integer productId, Integer brandId, LocalDateTime date) {
+        return jpaPriceRepository.findByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(productId, brandId, date);
     }
 }

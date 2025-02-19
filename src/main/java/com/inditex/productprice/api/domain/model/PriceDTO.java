@@ -1,12 +1,24 @@
 package com.inditex.productprice.api.domain.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+import lombok.*;
+
+import java.time.LocalDateTime;
+
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class PriceDTO {
 
-    private Integer idBrand;
-    private Integer idProduct;
-    private double precioTarifa;
-    private String fechaInicio;
-    private String fechaFin;
-    private double precioFinal;
+    private Integer brandId;
+    private Integer productId;
+    private LocalDateTime startDate;
+    private LocalDateTime endDate;
+    private Integer priceList;
+    private double price;
+    private String currency;
+
+
 
 }

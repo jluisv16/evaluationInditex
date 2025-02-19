@@ -2,12 +2,12 @@ package com.inditex.productprice.api.domain.entity;
 
 import java.time.LocalDateTime;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
-@Getter
-@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "price")
 public class Price {
 
@@ -38,4 +38,76 @@ public class Price {
     @Column(name = "currency")
     private String currency;
 
+
+    public Long getId() {
+        return id;
+    }
+
+    public Integer getBrandId() {
+        return brandId;
+    }
+
+    public Integer getProductId() {
+        return productId;
+    }
+
+    public LocalDateTime getStartDate() {
+        return startDate;
+    }
+
+    public LocalDateTime getEndDate() {
+        return endDate;
+    }
+
+    public Integer getPriceList() {
+        return priceList;
+    }
+
+    public Integer getPriority() {
+        return priority;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setBrandId(Integer brandId) {
+        this.brandId = brandId;
+    }
+
+    public void setProductId(Integer productId) {
+        this.productId = productId;
+    }
+
+    public void setStartDate(LocalDateTime startDate) {
+        this.startDate = startDate;
+    }
+
+    public void setEndDate(LocalDateTime endDate) {
+        this.endDate = endDate;
+    }
+
+    public void setPriceList(Integer priceList) {
+        this.priceList = priceList;
+    }
+
+    public void setPriority(Integer priority) {
+        this.priority = priority;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
 }

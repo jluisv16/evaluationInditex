@@ -4,11 +4,10 @@ import com.inditex.productprice.api.domain.entity.Price;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
-
+import java.util.List;
 
 @Repository
 public interface PriceRepository {
 
-    Optional<Price> findPriceByProductAndBrandAndDate(Integer productId, Integer brandId, LocalDateTime date);
+    List<Price> findByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(Integer productId, Integer brandId, LocalDateTime date);
 }

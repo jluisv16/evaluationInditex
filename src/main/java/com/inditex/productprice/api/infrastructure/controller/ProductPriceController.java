@@ -28,7 +28,7 @@ public class ProductPriceController {
         LocalDateTime date = LocalDateTime.parse(applicationDate, DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss"));
 
         return (ResponseEntity<PriceDTO>)
-                productPriceService.findPriceByProductAndBrandAndDate(productId, brandId, date)
+                productPriceService.getApplicablePrice(productId, brandId, date)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
