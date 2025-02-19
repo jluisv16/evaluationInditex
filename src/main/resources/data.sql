@@ -1,14 +1,21 @@
--- Datos iniciales
-INSERT INTO BRAND (ID, NAME) VALUES (1, 'ZARA');
 
-INSERT INTO PRICE (BRAND_ID, START_DATE, END_DATE, PRICE_LIST, PRODUCT_ID, PRIORITY, PRICE, CURR)
-VALUES (1, '2020-06-14 00:00:00', '2020-12-31 23:59:59', 1, 35455, 0, 35.50, 'EUR');
+-- Marcas de Inditex
+INSERT INTO brand (id, name) VALUES (1, 'Zara');
+INSERT INTO brand (id, name) VALUES (2, 'Massimo Dutti');
 
-INSERT INTO PRICE (BRAND_ID, START_DATE, END_DATE, PRICE_LIST, PRODUCT_ID, PRIORITY, PRICE, CURR)
-VALUES (1, '2020-06-14 15:00:00', '2020-06-14 18:30:00', 2, 35455, 1, 25.45, 'EUR');
+-- Productos
+INSERT INTO product (id, name) VALUES (1, 'Abrigo Lino');
+INSERT INTO product (id, name) VALUES (2, 'Camisa Seda');
 
-INSERT INTO PRICE (BRAND_ID, START_DATE, END_DATE, PRICE_LIST, PRODUCT_ID, PRIORITY, PRICE, CURR)
-VALUES (1, '2020-06-15 00:00:00', '2020-06-15 11:00:00', 3, 35455, 1, 30.50, 'EUR');
 
-INSERT INTO PRICE (BRAND_ID, START_DATE, END_DATE, PRICE_LIST, PRODUCT_ID, PRIORITY, PRICE, CURR)
-VALUES (1, '2020-06-15 16:00:00', '2020-12-31 23:59:59', 4, 35455, 1, 38.95, 'EUR');
+INSERT INTO price (id, brand_id, product_id, start_date, end_date, price_list, priority, price, currency)
+VALUES (1, 1, 35455, '2020-06-14 00:00:00', '2020-12-31 23:59:59', 1, 0, 35.50, 'EUR');
+
+INSERT INTO price (id, brand_id, product_id, start_date, end_date, price_list, priority, price, currency)
+VALUES (2, 1, 35455, '2020-06-14 15:00:00', '2020-06-14 18:30:00', 2, 1, 25.45, 'EUR');
+
+INSERT INTO price (id, brand_id, product_id, start_date, end_date, price_list, priority, price, currency)
+VALUES (3, 1, 35455, '2020-06-15 00:00:00', '2020-06-15 11:00:00', 3, 1, 30.50, 'EUR');
+
+INSERT INTO price (id, brand_id, product_id, start_date, end_date, price_list, priority, price, currency)
+VALUES (4, 1, 35455, '2020-06-15 16:00:00', '2020-12-31 23:59:59', 4, 1, 38.95, 'EUR');
