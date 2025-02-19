@@ -7,7 +7,6 @@ import lombok.*;
 @Entity
 @Builder
 @NoArgsConstructor
-@AllArgsConstructor
 @Table(name = "price")
 public class Price {
 
@@ -38,6 +37,17 @@ public class Price {
     @Column(name = "currency")
     private String currency;
 
+    public Price(Long id, Integer brandId, Integer productId, LocalDateTime startDate, LocalDateTime endDate, Integer priceList, Integer priority, double price, String currency) {
+        this.id = id;
+        this.brandId = brandId;
+        this.productId = productId;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.priceList = priceList;
+        this.priority = priority;
+        this.price = price;
+        this.currency = currency;
+    }
 
     public Long getId() {
         return id;

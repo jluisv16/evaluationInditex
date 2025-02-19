@@ -17,8 +17,8 @@ public class PriceRepositoryAdapter implements PriceRepository {
         this.jpaPriceRepository = jpaPriceRepository;
     }
 
-    @Override
-    public List<Price> findByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(Integer productId, Integer brandId, LocalDateTime date) {
-        return jpaPriceRepository.findByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(productId, brandId, date);
+
+    public List<Price> findValidPrices(Integer productId, Integer brandId, LocalDateTime date) {
+        return jpaPriceRepository.findValidPrices(productId, brandId, date);
     }
 }

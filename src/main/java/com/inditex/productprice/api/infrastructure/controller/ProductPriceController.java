@@ -21,14 +21,14 @@ public class ProductPriceController {
 
     @GetMapping("/prices")
     public ResponseEntity<PriceDTO> getPrice(
-            @RequestParam String applicationDate,
+            @RequestParam String date,
             @RequestParam Integer productId,
             @RequestParam Integer brandId) {
 
-        LocalDateTime date = LocalDateTime.parse(applicationDate, DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss"));
+        LocalDateTime dateTime = LocalDateTime.parse(date, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 
         return (ResponseEntity<PriceDTO>)
-                productPriceService.getApplicablePrice(productId, brandId, date)
+                productPriceService.getApplicablePrice(productId, brandId, dateTime)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }

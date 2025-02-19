@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface PriceRepository {
 
-    List<Price> findByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(Integer productId, Integer brandId, LocalDateTime date);
+    List<Price> findValidPrices(Integer productId, Integer brandId, LocalDateTime date);
 }

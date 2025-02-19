@@ -21,8 +21,7 @@ public class ProductPriceService {
 public Optional<PriceDTO> getApplicablePrice(Integer productId, Integer brand, LocalDateTime date) {
         // Lógica de negocio para obtener el precio del
         // producto según la fecha, producto y marca
-    List<Price> pricesList  = priceRepository
-                .findByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(productId, brand, date);
+    List<Price> pricesList  = priceRepository.findValidPrices(productId, brand, date);
 
     if (!pricesList.isEmpty()) {
         return pricesList.stream().findFirst().map(this::toDto);
