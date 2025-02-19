@@ -49,6 +49,27 @@ public class Price {
         this.currency = currency;
     }
 
+    public Price(Integer brandId, Integer productId, LocalDateTime startDate, LocalDateTime endDate, int priority, double price, String currency) {
+        this.brandId = brandId;
+        this.productId = productId;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.priority = priority;
+        this.price = price;
+        this.currency = currency;
+    }
+
+    public Price(Integer brandId, Integer productId, LocalDateTime startDate, LocalDateTime endDate, int priceList, int priority, double price, String currency) {
+        this.brandId = brandId;
+        this.productId = productId;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.priceList = priceList;
+        this.priority = priority;
+        this.price = price;
+        this.currency = currency;
+    }
+
     public Long getId() {
         return id;
     }
